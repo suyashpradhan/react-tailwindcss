@@ -6,6 +6,7 @@ import {
   ShoppingBagIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
+import Authentication from "./authentication/Authentication";
 
 const navigation = {
   categories: [
@@ -16,29 +17,17 @@ const navigation = {
         {
           id: "clothing",
           name: "Clothing",
-          items: [
-            { name: "Tops", href: "#" },
-            { name: "Dresses", href: "#" },
-            { name: "Browse All", href: "#" },
-          ],
+          items: [{ name: "Tops", href: "#" }],
         },
         {
           id: "accessories",
           name: "Accessories",
-          items: [
-            { name: "Watches", href: "#" },
-            { name: "Wallets", href: "#" },
-            { name: "Browse All", href: "#" },
-          ],
+          items: [{ name: "Watches", href: "#" }],
         },
         {
           id: "brands",
           name: "Brands",
-          items: [
-            { name: "Full Nelson", href: "#" },
-            { name: "My Way", href: "#" },
-            { name: "Browse All", href: "#" },
-          ],
+          items: [{ name: "Full Nelson", href: "#" }],
         },
       ],
     },
@@ -49,29 +38,17 @@ const navigation = {
         {
           id: "clothing",
           name: "Clothing",
-          items: [
-            { name: "Tops", href: "#" },
-            { name: "Pants", href: "#" },
-            { name: "Browse All", href: "#" },
-          ],
+          items: [{ name: "Tshirts", href: "#" }],
         },
         {
           id: "accessories",
           name: "Accessories",
-          items: [
-            { name: "Watches", href: "#" },
-            { name: "Wallets", href: "#" },
-            { name: "Browse All", href: "#" },
-          ],
+          items: [{ name: "Watches", href: "#" }],
         },
         {
           id: "brands",
           name: "Brands",
-          items: [
-            { name: "Re-Arranged", href: "#" },
-            { name: "Counterfeit", href: "#" },
-            { name: "Browse All", href: "#" },
-          ],
+          items: [{ name: "Re-Arranged", href: "#" }],
         },
       ],
     },
@@ -160,11 +137,7 @@ export default function Header() {
                             >
                               {section.name}
                             </p>
-                            <ul
-                              role="list"
-                              aria-labelledby={`${category.id}-${section.id}-heading-mobile`}
-                              className="mt-6 flex flex-col space-y-6"
-                            >
+                            <ul className="mt-6 flex flex-col space-y-6">
                               {section.items.map((item) => (
                                 <li key={item.name} className="flow-root">
                                   <a
@@ -186,7 +159,7 @@ export default function Header() {
                 <div className="space-y-6 border-t border-gray-200 px-4 py-6">
                   <div className="flow-root">
                     <a
-                      href="#"
+                      href="0"
                       className="-m-2 block p-2 font-medium text-gray-900"
                     >
                       Sign in
@@ -194,7 +167,7 @@ export default function Header() {
                   </div>
                   <div className="flow-root">
                     <a
-                      href="#"
+                      href="0"
                       className="-m-2 block p-2 font-medium text-gray-900"
                     >
                       Create account
@@ -230,7 +203,7 @@ export default function Header() {
 
               {/* Logo */}
               <div className="ml-4 flex lg:ml-0">
-                <a href="#">
+                <a href="0">
                   <span className="sr-only">Your Company</span>
                   <img
                     className="h-8 w-auto"
@@ -288,11 +261,7 @@ export default function Header() {
                                           >
                                             {section.name}
                                           </p>
-                                          <ul
-                                            role="list"
-                                            aria-labelledby={`${section.name}-heading`}
-                                            className="mt-6 space-y-6 sm:mt-4 sm:space-y-4"
-                                          >
+                                          <ul className="mt-6 space-y-6 sm:mt-4 sm:space-y-4">
                                             {section.items.map((item) => (
                                               <li
                                                 key={item.name}
@@ -323,25 +292,11 @@ export default function Header() {
               </Popover.Group>
 
               <div className="ml-auto flex items-center">
-                <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                  <a
-                    href="#"
-                    className="text-sm font-medium text-gray-700 hover:text-gray-800"
-                  >
-                    Sign in
-                  </a>
-                  <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
-                  <a
-                    href="#"
-                    className="text-sm font-medium text-gray-700 hover:text-gray-800"
-                  >
-                    Create account
-                  </a>
-                </div>
+                <Authentication />
 
                 {/* Search */}
                 <div className="flex lg:ml-6">
-                  <a href="#" className="p-2 text-gray-400 hover:text-gray-500">
+                  <a href="0" className="p-2 text-gray-400 hover:text-gray-500">
                     <span className="sr-only">Search</span>
                     <MagnifyingGlassIcon
                       className="h-6 w-6"
@@ -352,7 +307,7 @@ export default function Header() {
 
                 {/* Cart */}
                 <div className="ml-4 flow-root lg:ml-6">
-                  <a href="#" className="group -m-2 flex items-center p-2">
+                  <a href="0" className="group -m-2 flex items-center p-2">
                     <ShoppingBagIcon
                       className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                       aria-hidden="true"
